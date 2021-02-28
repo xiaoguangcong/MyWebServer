@@ -5,6 +5,7 @@
 #include <string>
 #include "NonCopyable.h"
 
+// 用来写日志
 class AppendFile : private NonCopyable
 {
 public:

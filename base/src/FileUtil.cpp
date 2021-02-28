@@ -26,14 +26,23 @@ void AppendFile::append(const char *logline, const size_t len)
             if (err) fprintf(stderr, "AppendFile::append() failed !\n ");
             break;
         }
+        // n代表已经写入的数
         n += x;
+        // remain代表还需写入的数
         remain = len - n;
     }
 }
+
+/*
+    定义函数：int fflush(FILE* stream);
+
+    函数说明：fflush()会强迫将缓冲区内的数据写回参数stream 指定的文件中. 如果参数stream 为NULL,fflush()会将所有打开的文件数据更新.
+ */
 
 void AppendFile::flush() { fflush(fp_); }
 
 size_t AppendFile::write(const char* logline, size_t len)
 {
+    //写文件的不加锁的版本，线程不安全
     return fwrite_unlocked(logline, 1, len, fp_);
 }
