@@ -5,15 +5,15 @@
 #include <time.h>
 #include <cstdint>
 
-#include "mutexlock.h"
-#include "noncopyable.h"
+#include "MutexLock.h"
+#include "NonCopyable.h"
 
 class Condition : NonCopyable
 {
 public:
     explicit Condition(MutexLock &mutex_) : mutex(mutex_)
     {
-        pthread_cond_init(&cond, nullptr;)
+        pthread_cond_init(&cond, nullptr);
     }
 
     ~Condition()
@@ -39,9 +39,9 @@ public:
     bool waitForSeconds(int seconds)
     {
         struct timespec abstime;
-        clock_gettime(CLOCK_READTIME, &abstime);
+        clock_gettime(CLOCK_REALTIME, &abstime);
         abstime.tv_sec += static_cast<time_t>(seconds);
-        return ETIMEDOUT == pthread_cond_timewait(&cond, mutex.get(), &abstime);
+        return ETIMEDOUT == pthread_cond_timedwait(&cond, mutex.get(), &abstime);
     }
 
 private:

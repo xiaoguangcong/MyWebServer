@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.5)
 project(MyWebServer)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -12,3 +12,5 @@ set(include_dirs ${PROJECT_SOURCE_DIR}/include)
 include_directories(${include_dirs})
 
 add_executable(MyWebServer ${cpp_srcs})
+
+add_subdirectory(base)
