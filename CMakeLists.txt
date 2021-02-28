@@ -11,8 +11,10 @@ set(include_dirs ${PROJECT_SOURCE_DIR}/include)
 
 include_directories(${include_dirs})
 
+#设置可执行文件的输出目录
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)    
 
+#生成可执行文件
 add_executable(MyWebServer ${cpp_srcs})
 
 add_subdirectory(base)

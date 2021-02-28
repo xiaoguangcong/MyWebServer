@@ -7,6 +7,7 @@
 #include "NonCopyable.h"
 #include "MutexLock.h"
 
+// LogFile 负责文件写入
 
 class LogFile : private NonCopyable
 {
