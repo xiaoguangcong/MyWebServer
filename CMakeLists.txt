@@ -11,6 +11,8 @@ set(include_dirs ${PROJECT_SOURCE_DIR}/include)
 
 include_directories(${include_dirs})
 
+set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)    
+
 add_executable(MyWebServer ${cpp_srcs})
 
 add_subdirectory(base)

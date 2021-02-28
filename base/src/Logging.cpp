@@ -1,5 +1,5 @@
-#include "../include/Logging.h"
-#include "../include/AsyncLogging.h"
+#include "Logging.h"
+#include "AsyncLogging.h"
 #include <pthread.h>
 #include <sys/time.h>    
 

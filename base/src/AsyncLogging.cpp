@@ -1,5 +1,5 @@
-#include "../include/AsyncLogging.h"
-#include "../include/LogFile.h"
+#include "AsyncLogging.h"
+#include "LogFile.h"
 #include <cassert>
 #include <cstddef>
 

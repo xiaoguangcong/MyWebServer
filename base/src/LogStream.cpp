@@ -1,4 +1,4 @@
-#include "../include/LogStream.h"
+#include "LogStream.h"
 #include <cstddef>
 #include <algorithm>
 #include <cstdio>
