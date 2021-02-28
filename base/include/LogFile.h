@@ -20,8 +20,6 @@ public:
 
     void flush();
 
-    bool rollFile();
-
 private:
     void append_unlocked(const char* logline, int len);
 

@@ -9,8 +9,7 @@
 #include <memory>
 #include <vector>
 
-// AsyncLogging 负责实现 多缓冲技术 协调前后端
-
+// AsyncLogging 负责实现多缓冲技术 协调前后端
 
 class AsyncLogging : private NonCopyable
 {
