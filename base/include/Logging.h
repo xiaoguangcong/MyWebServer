@@ -1,6 +1,7 @@
 #pragma once
 
-#include "LogStream.h"
+#include "logstream.h"
+
 class AsyncLogging;
 
 class Logger

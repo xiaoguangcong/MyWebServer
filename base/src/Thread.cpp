@@ -1,10 +1,11 @@
-#include "Thread.h"
-#include "CurrentThread.h"
 #include <cstdio>
 #include <pthread.h>
 #include <sched.h>
 #include <sys/prctl.h>
 #include <assert.h>
+
+#include "thread.h"
+#include "currentthread.h"
 
 namespace CurrentThread
 {

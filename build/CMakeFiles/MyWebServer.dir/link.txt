@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++11 -O2 -pthread -fopenmp   CMakeFiles/MyWebServer.dir/src/epoll.cpp.o CMakeFiles/MyWebServer.dir/src/http_connect.cpp.o CMakeFiles/MyWebServer.dir/src/main.cpp.o CMakeFiles/MyWebServer.dir/src/thread_pool.cpp.o CMakeFiles/MyWebServer.dir/src/timer.cpp.o  -o ../bin/MyWebServer 

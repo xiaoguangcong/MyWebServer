@@ -1,7 +1,8 @@
-#include "AsyncLogging.h"
-#include "LogFile.h"
 #include <cassert>
 #include <cstddef>
+
+#include "asynclogging.h"
+#include "logfile.h"
 
 AsyncLogging::AsyncLogging(std::string logFileName_, int flushInterval)
     : flushInterval_(flushInterval)

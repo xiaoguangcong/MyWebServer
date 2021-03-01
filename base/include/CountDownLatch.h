@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Condition.h"
-#include "MutexLock.h"
-#include "NonCopyable.h"
+#include "condition.h"
+#include "mutexlock.h"
+#include "noncopyable.h"
 
 /*
     1. CountDownLatch是一个同步工具类，用来协调多个线程之间的同步，或者说起到线程之间的通信（而不是用作互斥的作用）。

@@ -3,7 +3,8 @@
 #include <cstddef>
 #include <cstdio>
 #include <string>
-#include "NonCopyable.h"
+
+#include "noncopyable.h"
 
 // 用来写日志
 class AppendFile : private NonCopyable

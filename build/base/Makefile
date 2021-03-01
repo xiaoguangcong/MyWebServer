@@ -125,194 +125,194 @@ server/fast:
 	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
-src/AsyncLogging.o: src/AsyncLogging.cpp.o
+src/asynclogging.o: src/asynclogging.cpp.o
 
-.PHONY : src/AsyncLogging.o
-
-# target to build an object file
-src/AsyncLogging.cpp.o:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o
-.PHONY : src/AsyncLogging.cpp.o
-
-src/AsyncLogging.i: src/AsyncLogging.cpp.i
-
-.PHONY : src/AsyncLogging.i
-
-# target to preprocess a source file
-src/AsyncLogging.cpp.i:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/AsyncLogging.cpp.i
-.PHONY : src/AsyncLogging.cpp.i
-
-src/AsyncLogging.s: src/AsyncLogging.cpp.s
-
-.PHONY : src/AsyncLogging.s
-
-# target to generate assembly for a file
-src/AsyncLogging.cpp.s:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/AsyncLogging.cpp.s
-.PHONY : src/AsyncLogging.cpp.s
-
-src/CountDownLatch.o: src/CountDownLatch.cpp.o
-
-.PHONY : src/CountDownLatch.o
+.PHONY : src/asynclogging.o
 
 # target to build an object file
-src/CountDownLatch.cpp.o:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o
-.PHONY : src/CountDownLatch.cpp.o
+src/asynclogging.cpp.o:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/asynclogging.cpp.o
+.PHONY : src/asynclogging.cpp.o
 
-src/CountDownLatch.i: src/CountDownLatch.cpp.i
+src/asynclogging.i: src/asynclogging.cpp.i
 
-.PHONY : src/CountDownLatch.i
+.PHONY : src/asynclogging.i
 
 # target to preprocess a source file
-src/CountDownLatch.cpp.i:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/CountDownLatch.cpp.i
-.PHONY : src/CountDownLatch.cpp.i
+src/asynclogging.cpp.i:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/asynclogging.cpp.i
+.PHONY : src/asynclogging.cpp.i
 
-src/CountDownLatch.s: src/CountDownLatch.cpp.s
+src/asynclogging.s: src/asynclogging.cpp.s
 
-.PHONY : src/CountDownLatch.s
+.PHONY : src/asynclogging.s
 
 # target to generate assembly for a file
-src/CountDownLatch.cpp.s:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/CountDownLatch.cpp.s
-.PHONY : src/CountDownLatch.cpp.s
+src/asynclogging.cpp.s:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/asynclogging.cpp.s
+.PHONY : src/asynclogging.cpp.s
 
-src/FileUtil.o: src/FileUtil.cpp.o
+src/countdownlatch.o: src/countdownlatch.cpp.o
 
-.PHONY : src/FileUtil.o
+.PHONY : src/countdownlatch.o
 
 # target to build an object file
-src/FileUtil.cpp.o:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/FileUtil.cpp.o
-.PHONY : src/FileUtil.cpp.o
+src/countdownlatch.cpp.o:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/countdownlatch.cpp.o
+.PHONY : src/countdownlatch.cpp.o
 
-src/FileUtil.i: src/FileUtil.cpp.i
+src/countdownlatch.i: src/countdownlatch.cpp.i
 
-.PHONY : src/FileUtil.i
+.PHONY : src/countdownlatch.i
 
 # target to preprocess a source file
-src/FileUtil.cpp.i:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/FileUtil.cpp.i
-.PHONY : src/FileUtil.cpp.i
+src/countdownlatch.cpp.i:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/countdownlatch.cpp.i
+.PHONY : src/countdownlatch.cpp.i
 
-src/FileUtil.s: src/FileUtil.cpp.s
+src/countdownlatch.s: src/countdownlatch.cpp.s
 
-.PHONY : src/FileUtil.s
+.PHONY : src/countdownlatch.s
 
 # target to generate assembly for a file
-src/FileUtil.cpp.s:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/FileUtil.cpp.s
-.PHONY : src/FileUtil.cpp.s
+src/countdownlatch.cpp.s:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/countdownlatch.cpp.s
+.PHONY : src/countdownlatch.cpp.s
 
-src/LogFile.o: src/LogFile.cpp.o
+src/file_util.o: src/file_util.cpp.o
 
-.PHONY : src/LogFile.o
+.PHONY : src/file_util.o
 
 # target to build an object file
-src/LogFile.cpp.o:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogFile.cpp.o
-.PHONY : src/LogFile.cpp.o
+src/file_util.cpp.o:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/file_util.cpp.o
+.PHONY : src/file_util.cpp.o
 
-src/LogFile.i: src/LogFile.cpp.i
+src/file_util.i: src/file_util.cpp.i
 
-.PHONY : src/LogFile.i
+.PHONY : src/file_util.i
 
 # target to preprocess a source file
-src/LogFile.cpp.i:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogFile.cpp.i
-.PHONY : src/LogFile.cpp.i
+src/file_util.cpp.i:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/file_util.cpp.i
+.PHONY : src/file_util.cpp.i
 
-src/LogFile.s: src/LogFile.cpp.s
+src/file_util.s: src/file_util.cpp.s
 
-.PHONY : src/LogFile.s
+.PHONY : src/file_util.s
 
 # target to generate assembly for a file
-src/LogFile.cpp.s:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogFile.cpp.s
-.PHONY : src/LogFile.cpp.s
+src/file_util.cpp.s:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/file_util.cpp.s
+.PHONY : src/file_util.cpp.s
 
-src/LogStream.o: src/LogStream.cpp.o
+src/logfile.o: src/logfile.cpp.o
 
-.PHONY : src/LogStream.o
+.PHONY : src/logfile.o
 
 # target to build an object file
-src/LogStream.cpp.o:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogStream.cpp.o
-.PHONY : src/LogStream.cpp.o
+src/logfile.cpp.o:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logfile.cpp.o
+.PHONY : src/logfile.cpp.o
 
-src/LogStream.i: src/LogStream.cpp.i
+src/logfile.i: src/logfile.cpp.i
 
-.PHONY : src/LogStream.i
+.PHONY : src/logfile.i
 
 # target to preprocess a source file
-src/LogStream.cpp.i:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogStream.cpp.i
-.PHONY : src/LogStream.cpp.i
+src/logfile.cpp.i:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logfile.cpp.i
+.PHONY : src/logfile.cpp.i
 
-src/LogStream.s: src/LogStream.cpp.s
+src/logfile.s: src/logfile.cpp.s
 
-.PHONY : src/LogStream.s
+.PHONY : src/logfile.s
 
 # target to generate assembly for a file
-src/LogStream.cpp.s:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogStream.cpp.s
-.PHONY : src/LogStream.cpp.s
+src/logfile.cpp.s:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logfile.cpp.s
+.PHONY : src/logfile.cpp.s
 
-src/Logging.o: src/Logging.cpp.o
+src/logging.o: src/logging.cpp.o
 
-.PHONY : src/Logging.o
+.PHONY : src/logging.o
 
 # target to build an object file
-src/Logging.cpp.o:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Logging.cpp.o
-.PHONY : src/Logging.cpp.o
+src/logging.cpp.o:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logging.cpp.o
+.PHONY : src/logging.cpp.o
 
-src/Logging.i: src/Logging.cpp.i
+src/logging.i: src/logging.cpp.i
 
-.PHONY : src/Logging.i
+.PHONY : src/logging.i
 
 # target to preprocess a source file
-src/Logging.cpp.i:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Logging.cpp.i
-.PHONY : src/Logging.cpp.i
+src/logging.cpp.i:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logging.cpp.i
+.PHONY : src/logging.cpp.i
 
-src/Logging.s: src/Logging.cpp.s
+src/logging.s: src/logging.cpp.s
 
-.PHONY : src/Logging.s
+.PHONY : src/logging.s
 
 # target to generate assembly for a file
-src/Logging.cpp.s:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Logging.cpp.s
-.PHONY : src/Logging.cpp.s
+src/logging.cpp.s:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logging.cpp.s
+.PHONY : src/logging.cpp.s
 
-src/Thread.o: src/Thread.cpp.o
+src/logstream.o: src/logstream.cpp.o
 
-.PHONY : src/Thread.o
+.PHONY : src/logstream.o
 
 # target to build an object file
-src/Thread.cpp.o:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Thread.cpp.o
-.PHONY : src/Thread.cpp.o
+src/logstream.cpp.o:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logstream.cpp.o
+.PHONY : src/logstream.cpp.o
 
-src/Thread.i: src/Thread.cpp.i
+src/logstream.i: src/logstream.cpp.i
 
-.PHONY : src/Thread.i
+.PHONY : src/logstream.i
 
 # target to preprocess a source file
-src/Thread.cpp.i:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Thread.cpp.i
-.PHONY : src/Thread.cpp.i
+src/logstream.cpp.i:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logstream.cpp.i
+.PHONY : src/logstream.cpp.i
 
-src/Thread.s: src/Thread.cpp.s
+src/logstream.s: src/logstream.cpp.s
 
-.PHONY : src/Thread.s
+.PHONY : src/logstream.s
 
 # target to generate assembly for a file
-src/Thread.cpp.s:
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Thread.cpp.s
-.PHONY : src/Thread.cpp.s
+src/logstream.cpp.s:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logstream.cpp.s
+.PHONY : src/logstream.cpp.s
+
+src/thread.o: src/thread.cpp.o
+
+.PHONY : src/thread.o
+
+# target to build an object file
+src/thread.cpp.o:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/thread.cpp.o
+.PHONY : src/thread.cpp.o
+
+src/thread.i: src/thread.cpp.i
+
+.PHONY : src/thread.i
+
+# target to preprocess a source file
+src/thread.cpp.i:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/thread.cpp.i
+.PHONY : src/thread.cpp.i
+
+src/thread.s: src/thread.cpp.s
+
+.PHONY : src/thread.s
+
+# target to generate assembly for a file
+src/thread.cpp.s:
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build && $(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/thread.cpp.s
+.PHONY : src/thread.cpp.s
 
 # Help Target
 help:
@@ -323,27 +323,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... server"
-	@echo "... src/AsyncLogging.o"
-	@echo "... src/AsyncLogging.i"
-	@echo "... src/AsyncLogging.s"
-	@echo "... src/CountDownLatch.o"
-	@echo "... src/CountDownLatch.i"
-	@echo "... src/CountDownLatch.s"
-	@echo "... src/FileUtil.o"
-	@echo "... src/FileUtil.i"
-	@echo "... src/FileUtil.s"
-	@echo "... src/LogFile.o"
-	@echo "... src/LogFile.i"
-	@echo "... src/LogFile.s"
-	@echo "... src/LogStream.o"
-	@echo "... src/LogStream.i"
-	@echo "... src/LogStream.s"
-	@echo "... src/Logging.o"
-	@echo "... src/Logging.i"
-	@echo "... src/Logging.s"
-	@echo "... src/Thread.o"
-	@echo "... src/Thread.i"
-	@echo "... src/Thread.s"
+	@echo "... src/asynclogging.o"
+	@echo "... src/asynclogging.i"
+	@echo "... src/asynclogging.s"
+	@echo "... src/countdownlatch.o"
+	@echo "... src/countdownlatch.i"
+	@echo "... src/countdownlatch.s"
+	@echo "... src/file_util.o"
+	@echo "... src/file_util.i"
+	@echo "... src/file_util.s"
+	@echo "... src/logfile.o"
+	@echo "... src/logfile.i"
+	@echo "... src/logfile.s"
+	@echo "... src/logging.o"
+	@echo "... src/logging.i"
+	@echo "... src/logging.s"
+	@echo "... src/logstream.o"
+	@echo "... src/logstream.i"
+	@echo "... src/logstream.s"
+	@echo "... src/thread.o"
+	@echo "... src/thread.i"
+	@echo "... src/thread.s"
 .PHONY : help
 
 

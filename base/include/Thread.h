@@ -8,8 +8,8 @@
 #include <memory>
 #include <string>
 
-#include "CountDownLatch.h"
-#include "NonCopyable.h"
+#include "countdownlatch.h"
+#include "noncopyable.h"
 
 class Thread : private NonCopyable
 {

@@ -1,7 +1,8 @@
-#include "Logging.h"
-#include "AsyncLogging.h"
 #include <pthread.h>
-#include <sys/time.h>    
+#include <sys/time.h> 
+
+#include "logging.h"
+#include "asynclogging.h"
 
 static pthread_once_t once_control_ = PTHREAD_ONCE_INIT;
 static AsyncLogging *AsyncLogger_;

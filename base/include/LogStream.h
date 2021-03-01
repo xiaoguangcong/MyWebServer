@@ -1,9 +1,10 @@
 #pragma once
 
-#include "NonCopyable.h"
 #include <cstddef>
 #include<cstring>
 #include <string>
+
+#include "noncopyable.h"
 
 /*
     LogStream.h定义了Buffer类和LogStream类。

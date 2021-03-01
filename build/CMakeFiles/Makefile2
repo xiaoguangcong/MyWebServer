@@ -60,43 +60,6 @@ CMAKE_SOURCE_DIR = /mnt/c/Users/xgc/Desktop/WebServer
 CMAKE_BINARY_DIR = /mnt/c/Users/xgc/Desktop/WebServer/build
 
 #=============================================================================
-# Target rules for target CMakeFiles/MyWebServer.dir
-
-# All Build rule for target.
-CMakeFiles/MyWebServer.dir/all:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/depend
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target MyWebServer"
-.PHONY : CMakeFiles/MyWebServer.dir/all
-
-# Include target in all.
-all: CMakeFiles/MyWebServer.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/MyWebServer.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/MyWebServer.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles 0
-.PHONY : CMakeFiles/MyWebServer.dir/rule
-
-# Convenience name for target.
-MyWebServer: CMakeFiles/MyWebServer.dir/rule
-
-.PHONY : MyWebServer
-
-# clean rule for target.
-CMakeFiles/MyWebServer.dir/clean:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/clean
-.PHONY : CMakeFiles/MyWebServer.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/MyWebServer.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Directory level rules for directory base
 
 # Convenience name for "all" pass in the directory.
@@ -121,7 +84,7 @@ base/preinstall:
 base/CMakeFiles/server.dir/all:
 	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/depend
 	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=7,8,9,10,11,12,13,14 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target server"
 .PHONY : base/CMakeFiles/server.dir/all
 
 # Include target in all.

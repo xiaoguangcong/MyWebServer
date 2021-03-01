@@ -57,194 +57,194 @@ include base/CMakeFiles/server.dir/progress.make
 # Include the compile flags for this target's objects.
 include base/CMakeFiles/server.dir/flags.make
 
-base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o: base/CMakeFiles/server.dir/flags.make
-base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o: ../base/src/AsyncLogging.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/AsyncLogging.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/AsyncLogging.cpp
+base/CMakeFiles/server.dir/src/asynclogging.cpp.o: base/CMakeFiles/server.dir/flags.make
+base/CMakeFiles/server.dir/src/asynclogging.cpp.o: ../base/src/asynclogging.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object base/CMakeFiles/server.dir/src/asynclogging.cpp.o"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/asynclogging.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/asynclogging.cpp
 
-base/CMakeFiles/server.dir/src/AsyncLogging.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/AsyncLogging.cpp.i"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/AsyncLogging.cpp > CMakeFiles/server.dir/src/AsyncLogging.cpp.i
+base/CMakeFiles/server.dir/src/asynclogging.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/asynclogging.cpp.i"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/asynclogging.cpp > CMakeFiles/server.dir/src/asynclogging.cpp.i
 
-base/CMakeFiles/server.dir/src/AsyncLogging.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/AsyncLogging.cpp.s"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/AsyncLogging.cpp -o CMakeFiles/server.dir/src/AsyncLogging.cpp.s
+base/CMakeFiles/server.dir/src/asynclogging.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/asynclogging.cpp.s"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/asynclogging.cpp -o CMakeFiles/server.dir/src/asynclogging.cpp.s
 
-base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.requires:
+base/CMakeFiles/server.dir/src/asynclogging.cpp.o.requires:
 
-.PHONY : base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.requires
+.PHONY : base/CMakeFiles/server.dir/src/asynclogging.cpp.o.requires
 
-base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.provides: base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.requires
-	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.provides.build
-.PHONY : base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.provides
+base/CMakeFiles/server.dir/src/asynclogging.cpp.o.provides: base/CMakeFiles/server.dir/src/asynclogging.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/asynclogging.cpp.o.provides.build
+.PHONY : base/CMakeFiles/server.dir/src/asynclogging.cpp.o.provides
 
-base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.provides.build: base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o
-
-
-base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o: base/CMakeFiles/server.dir/flags.make
-base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o: ../base/src/CountDownLatch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/CountDownLatch.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/CountDownLatch.cpp
-
-base/CMakeFiles/server.dir/src/CountDownLatch.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/CountDownLatch.cpp.i"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/CountDownLatch.cpp > CMakeFiles/server.dir/src/CountDownLatch.cpp.i
-
-base/CMakeFiles/server.dir/src/CountDownLatch.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/CountDownLatch.cpp.s"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/CountDownLatch.cpp -o CMakeFiles/server.dir/src/CountDownLatch.cpp.s
-
-base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.requires:
-
-.PHONY : base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.requires
-
-base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.provides: base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.requires
-	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.provides.build
-.PHONY : base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.provides
-
-base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.provides.build: base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o
+base/CMakeFiles/server.dir/src/asynclogging.cpp.o.provides.build: base/CMakeFiles/server.dir/src/asynclogging.cpp.o
 
 
-base/CMakeFiles/server.dir/src/FileUtil.cpp.o: base/CMakeFiles/server.dir/flags.make
-base/CMakeFiles/server.dir/src/FileUtil.cpp.o: ../base/src/FileUtil.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object base/CMakeFiles/server.dir/src/FileUtil.cpp.o"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/FileUtil.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/FileUtil.cpp
+base/CMakeFiles/server.dir/src/countdownlatch.cpp.o: base/CMakeFiles/server.dir/flags.make
+base/CMakeFiles/server.dir/src/countdownlatch.cpp.o: ../base/src/countdownlatch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object base/CMakeFiles/server.dir/src/countdownlatch.cpp.o"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/countdownlatch.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/countdownlatch.cpp
 
-base/CMakeFiles/server.dir/src/FileUtil.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/FileUtil.cpp.i"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/FileUtil.cpp > CMakeFiles/server.dir/src/FileUtil.cpp.i
+base/CMakeFiles/server.dir/src/countdownlatch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/countdownlatch.cpp.i"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/countdownlatch.cpp > CMakeFiles/server.dir/src/countdownlatch.cpp.i
 
-base/CMakeFiles/server.dir/src/FileUtil.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/FileUtil.cpp.s"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/FileUtil.cpp -o CMakeFiles/server.dir/src/FileUtil.cpp.s
+base/CMakeFiles/server.dir/src/countdownlatch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/countdownlatch.cpp.s"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/countdownlatch.cpp -o CMakeFiles/server.dir/src/countdownlatch.cpp.s
 
-base/CMakeFiles/server.dir/src/FileUtil.cpp.o.requires:
+base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.requires:
 
-.PHONY : base/CMakeFiles/server.dir/src/FileUtil.cpp.o.requires
+.PHONY : base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.requires
 
-base/CMakeFiles/server.dir/src/FileUtil.cpp.o.provides: base/CMakeFiles/server.dir/src/FileUtil.cpp.o.requires
-	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/FileUtil.cpp.o.provides.build
-.PHONY : base/CMakeFiles/server.dir/src/FileUtil.cpp.o.provides
+base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.provides: base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.provides.build
+.PHONY : base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.provides
 
-base/CMakeFiles/server.dir/src/FileUtil.cpp.o.provides.build: base/CMakeFiles/server.dir/src/FileUtil.cpp.o
-
-
-base/CMakeFiles/server.dir/src/LogFile.cpp.o: base/CMakeFiles/server.dir/flags.make
-base/CMakeFiles/server.dir/src/LogFile.cpp.o: ../base/src/LogFile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object base/CMakeFiles/server.dir/src/LogFile.cpp.o"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/LogFile.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/LogFile.cpp
-
-base/CMakeFiles/server.dir/src/LogFile.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/LogFile.cpp.i"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/LogFile.cpp > CMakeFiles/server.dir/src/LogFile.cpp.i
-
-base/CMakeFiles/server.dir/src/LogFile.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/LogFile.cpp.s"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/LogFile.cpp -o CMakeFiles/server.dir/src/LogFile.cpp.s
-
-base/CMakeFiles/server.dir/src/LogFile.cpp.o.requires:
-
-.PHONY : base/CMakeFiles/server.dir/src/LogFile.cpp.o.requires
-
-base/CMakeFiles/server.dir/src/LogFile.cpp.o.provides: base/CMakeFiles/server.dir/src/LogFile.cpp.o.requires
-	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogFile.cpp.o.provides.build
-.PHONY : base/CMakeFiles/server.dir/src/LogFile.cpp.o.provides
-
-base/CMakeFiles/server.dir/src/LogFile.cpp.o.provides.build: base/CMakeFiles/server.dir/src/LogFile.cpp.o
+base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.provides.build: base/CMakeFiles/server.dir/src/countdownlatch.cpp.o
 
 
-base/CMakeFiles/server.dir/src/Logging.cpp.o: base/CMakeFiles/server.dir/flags.make
-base/CMakeFiles/server.dir/src/Logging.cpp.o: ../base/src/Logging.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/CMakeFiles/server.dir/src/Logging.cpp.o"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/Logging.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/Logging.cpp
+base/CMakeFiles/server.dir/src/file_util.cpp.o: base/CMakeFiles/server.dir/flags.make
+base/CMakeFiles/server.dir/src/file_util.cpp.o: ../base/src/file_util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object base/CMakeFiles/server.dir/src/file_util.cpp.o"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/file_util.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/file_util.cpp
 
-base/CMakeFiles/server.dir/src/Logging.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/Logging.cpp.i"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/Logging.cpp > CMakeFiles/server.dir/src/Logging.cpp.i
+base/CMakeFiles/server.dir/src/file_util.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/file_util.cpp.i"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/file_util.cpp > CMakeFiles/server.dir/src/file_util.cpp.i
 
-base/CMakeFiles/server.dir/src/Logging.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Logging.cpp.s"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/Logging.cpp -o CMakeFiles/server.dir/src/Logging.cpp.s
+base/CMakeFiles/server.dir/src/file_util.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/file_util.cpp.s"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/file_util.cpp -o CMakeFiles/server.dir/src/file_util.cpp.s
 
-base/CMakeFiles/server.dir/src/Logging.cpp.o.requires:
+base/CMakeFiles/server.dir/src/file_util.cpp.o.requires:
 
-.PHONY : base/CMakeFiles/server.dir/src/Logging.cpp.o.requires
+.PHONY : base/CMakeFiles/server.dir/src/file_util.cpp.o.requires
 
-base/CMakeFiles/server.dir/src/Logging.cpp.o.provides: base/CMakeFiles/server.dir/src/Logging.cpp.o.requires
-	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Logging.cpp.o.provides.build
-.PHONY : base/CMakeFiles/server.dir/src/Logging.cpp.o.provides
+base/CMakeFiles/server.dir/src/file_util.cpp.o.provides: base/CMakeFiles/server.dir/src/file_util.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/file_util.cpp.o.provides.build
+.PHONY : base/CMakeFiles/server.dir/src/file_util.cpp.o.provides
 
-base/CMakeFiles/server.dir/src/Logging.cpp.o.provides.build: base/CMakeFiles/server.dir/src/Logging.cpp.o
-
-
-base/CMakeFiles/server.dir/src/LogStream.cpp.o: base/CMakeFiles/server.dir/flags.make
-base/CMakeFiles/server.dir/src/LogStream.cpp.o: ../base/src/LogStream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object base/CMakeFiles/server.dir/src/LogStream.cpp.o"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/LogStream.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/LogStream.cpp
-
-base/CMakeFiles/server.dir/src/LogStream.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/LogStream.cpp.i"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/LogStream.cpp > CMakeFiles/server.dir/src/LogStream.cpp.i
-
-base/CMakeFiles/server.dir/src/LogStream.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/LogStream.cpp.s"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/LogStream.cpp -o CMakeFiles/server.dir/src/LogStream.cpp.s
-
-base/CMakeFiles/server.dir/src/LogStream.cpp.o.requires:
-
-.PHONY : base/CMakeFiles/server.dir/src/LogStream.cpp.o.requires
-
-base/CMakeFiles/server.dir/src/LogStream.cpp.o.provides: base/CMakeFiles/server.dir/src/LogStream.cpp.o.requires
-	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/LogStream.cpp.o.provides.build
-.PHONY : base/CMakeFiles/server.dir/src/LogStream.cpp.o.provides
-
-base/CMakeFiles/server.dir/src/LogStream.cpp.o.provides.build: base/CMakeFiles/server.dir/src/LogStream.cpp.o
+base/CMakeFiles/server.dir/src/file_util.cpp.o.provides.build: base/CMakeFiles/server.dir/src/file_util.cpp.o
 
 
-base/CMakeFiles/server.dir/src/Thread.cpp.o: base/CMakeFiles/server.dir/flags.make
-base/CMakeFiles/server.dir/src/Thread.cpp.o: ../base/src/Thread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object base/CMakeFiles/server.dir/src/Thread.cpp.o"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/Thread.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/Thread.cpp
+base/CMakeFiles/server.dir/src/logfile.cpp.o: base/CMakeFiles/server.dir/flags.make
+base/CMakeFiles/server.dir/src/logfile.cpp.o: ../base/src/logfile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object base/CMakeFiles/server.dir/src/logfile.cpp.o"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/logfile.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/logfile.cpp
 
-base/CMakeFiles/server.dir/src/Thread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/Thread.cpp.i"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/Thread.cpp > CMakeFiles/server.dir/src/Thread.cpp.i
+base/CMakeFiles/server.dir/src/logfile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/logfile.cpp.i"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/logfile.cpp > CMakeFiles/server.dir/src/logfile.cpp.i
 
-base/CMakeFiles/server.dir/src/Thread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Thread.cpp.s"
-	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/Thread.cpp -o CMakeFiles/server.dir/src/Thread.cpp.s
+base/CMakeFiles/server.dir/src/logfile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/logfile.cpp.s"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/logfile.cpp -o CMakeFiles/server.dir/src/logfile.cpp.s
 
-base/CMakeFiles/server.dir/src/Thread.cpp.o.requires:
+base/CMakeFiles/server.dir/src/logfile.cpp.o.requires:
 
-.PHONY : base/CMakeFiles/server.dir/src/Thread.cpp.o.requires
+.PHONY : base/CMakeFiles/server.dir/src/logfile.cpp.o.requires
 
-base/CMakeFiles/server.dir/src/Thread.cpp.o.provides: base/CMakeFiles/server.dir/src/Thread.cpp.o.requires
-	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/Thread.cpp.o.provides.build
-.PHONY : base/CMakeFiles/server.dir/src/Thread.cpp.o.provides
+base/CMakeFiles/server.dir/src/logfile.cpp.o.provides: base/CMakeFiles/server.dir/src/logfile.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logfile.cpp.o.provides.build
+.PHONY : base/CMakeFiles/server.dir/src/logfile.cpp.o.provides
 
-base/CMakeFiles/server.dir/src/Thread.cpp.o.provides.build: base/CMakeFiles/server.dir/src/Thread.cpp.o
+base/CMakeFiles/server.dir/src/logfile.cpp.o.provides.build: base/CMakeFiles/server.dir/src/logfile.cpp.o
+
+
+base/CMakeFiles/server.dir/src/logging.cpp.o: base/CMakeFiles/server.dir/flags.make
+base/CMakeFiles/server.dir/src/logging.cpp.o: ../base/src/logging.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object base/CMakeFiles/server.dir/src/logging.cpp.o"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/logging.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/logging.cpp
+
+base/CMakeFiles/server.dir/src/logging.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/logging.cpp.i"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/logging.cpp > CMakeFiles/server.dir/src/logging.cpp.i
+
+base/CMakeFiles/server.dir/src/logging.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/logging.cpp.s"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/logging.cpp -o CMakeFiles/server.dir/src/logging.cpp.s
+
+base/CMakeFiles/server.dir/src/logging.cpp.o.requires:
+
+.PHONY : base/CMakeFiles/server.dir/src/logging.cpp.o.requires
+
+base/CMakeFiles/server.dir/src/logging.cpp.o.provides: base/CMakeFiles/server.dir/src/logging.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logging.cpp.o.provides.build
+.PHONY : base/CMakeFiles/server.dir/src/logging.cpp.o.provides
+
+base/CMakeFiles/server.dir/src/logging.cpp.o.provides.build: base/CMakeFiles/server.dir/src/logging.cpp.o
+
+
+base/CMakeFiles/server.dir/src/logstream.cpp.o: base/CMakeFiles/server.dir/flags.make
+base/CMakeFiles/server.dir/src/logstream.cpp.o: ../base/src/logstream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object base/CMakeFiles/server.dir/src/logstream.cpp.o"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/logstream.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/logstream.cpp
+
+base/CMakeFiles/server.dir/src/logstream.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/logstream.cpp.i"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/logstream.cpp > CMakeFiles/server.dir/src/logstream.cpp.i
+
+base/CMakeFiles/server.dir/src/logstream.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/logstream.cpp.s"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/logstream.cpp -o CMakeFiles/server.dir/src/logstream.cpp.s
+
+base/CMakeFiles/server.dir/src/logstream.cpp.o.requires:
+
+.PHONY : base/CMakeFiles/server.dir/src/logstream.cpp.o.requires
+
+base/CMakeFiles/server.dir/src/logstream.cpp.o.provides: base/CMakeFiles/server.dir/src/logstream.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/logstream.cpp.o.provides.build
+.PHONY : base/CMakeFiles/server.dir/src/logstream.cpp.o.provides
+
+base/CMakeFiles/server.dir/src/logstream.cpp.o.provides.build: base/CMakeFiles/server.dir/src/logstream.cpp.o
+
+
+base/CMakeFiles/server.dir/src/thread.cpp.o: base/CMakeFiles/server.dir/flags.make
+base/CMakeFiles/server.dir/src/thread.cpp.o: ../base/src/thread.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object base/CMakeFiles/server.dir/src/thread.cpp.o"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/server.dir/src/thread.cpp.o -c /mnt/c/Users/xgc/Desktop/WebServer/base/src/thread.cpp
+
+base/CMakeFiles/server.dir/src/thread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/thread.cpp.i"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/xgc/Desktop/WebServer/base/src/thread.cpp > CMakeFiles/server.dir/src/thread.cpp.i
+
+base/CMakeFiles/server.dir/src/thread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/thread.cpp.s"
+	cd /mnt/c/Users/xgc/Desktop/WebServer/build/base && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/xgc/Desktop/WebServer/base/src/thread.cpp -o CMakeFiles/server.dir/src/thread.cpp.s
+
+base/CMakeFiles/server.dir/src/thread.cpp.o.requires:
+
+.PHONY : base/CMakeFiles/server.dir/src/thread.cpp.o.requires
+
+base/CMakeFiles/server.dir/src/thread.cpp.o.provides: base/CMakeFiles/server.dir/src/thread.cpp.o.requires
+	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/src/thread.cpp.o.provides.build
+.PHONY : base/CMakeFiles/server.dir/src/thread.cpp.o.provides
+
+base/CMakeFiles/server.dir/src/thread.cpp.o.provides.build: base/CMakeFiles/server.dir/src/thread.cpp.o
 
 
 # Object files for target server
 server_OBJECTS = \
-"CMakeFiles/server.dir/src/AsyncLogging.cpp.o" \
-"CMakeFiles/server.dir/src/CountDownLatch.cpp.o" \
-"CMakeFiles/server.dir/src/FileUtil.cpp.o" \
-"CMakeFiles/server.dir/src/LogFile.cpp.o" \
-"CMakeFiles/server.dir/src/Logging.cpp.o" \
-"CMakeFiles/server.dir/src/LogStream.cpp.o" \
-"CMakeFiles/server.dir/src/Thread.cpp.o"
+"CMakeFiles/server.dir/src/asynclogging.cpp.o" \
+"CMakeFiles/server.dir/src/countdownlatch.cpp.o" \
+"CMakeFiles/server.dir/src/file_util.cpp.o" \
+"CMakeFiles/server.dir/src/logfile.cpp.o" \
+"CMakeFiles/server.dir/src/logging.cpp.o" \
+"CMakeFiles/server.dir/src/logstream.cpp.o" \
+"CMakeFiles/server.dir/src/thread.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
-../lib/libserver.a: base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o
-../lib/libserver.a: base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o
-../lib/libserver.a: base/CMakeFiles/server.dir/src/FileUtil.cpp.o
-../lib/libserver.a: base/CMakeFiles/server.dir/src/LogFile.cpp.o
-../lib/libserver.a: base/CMakeFiles/server.dir/src/Logging.cpp.o
-../lib/libserver.a: base/CMakeFiles/server.dir/src/LogStream.cpp.o
-../lib/libserver.a: base/CMakeFiles/server.dir/src/Thread.cpp.o
+../lib/libserver.a: base/CMakeFiles/server.dir/src/asynclogging.cpp.o
+../lib/libserver.a: base/CMakeFiles/server.dir/src/countdownlatch.cpp.o
+../lib/libserver.a: base/CMakeFiles/server.dir/src/file_util.cpp.o
+../lib/libserver.a: base/CMakeFiles/server.dir/src/logfile.cpp.o
+../lib/libserver.a: base/CMakeFiles/server.dir/src/logging.cpp.o
+../lib/libserver.a: base/CMakeFiles/server.dir/src/logstream.cpp.o
+../lib/libserver.a: base/CMakeFiles/server.dir/src/thread.cpp.o
 ../lib/libserver.a: base/CMakeFiles/server.dir/build.make
 ../lib/libserver.a: base/CMakeFiles/server.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/xgc/Desktop/WebServer/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library ../../lib/libserver.a"
@@ -256,13 +256,13 @@ base/CMakeFiles/server.dir/build: ../lib/libserver.a
 
 .PHONY : base/CMakeFiles/server.dir/build
 
-base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/AsyncLogging.cpp.o.requires
-base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/CountDownLatch.cpp.o.requires
-base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/FileUtil.cpp.o.requires
-base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/LogFile.cpp.o.requires
-base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/Logging.cpp.o.requires
-base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/LogStream.cpp.o.requires
-base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/Thread.cpp.o.requires
+base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/asynclogging.cpp.o.requires
+base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/countdownlatch.cpp.o.requires
+base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/file_util.cpp.o.requires
+base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/logfile.cpp.o.requires
+base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/logging.cpp.o.requires
+base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/logstream.cpp.o.requires
+base/CMakeFiles/server.dir/requires: base/CMakeFiles/server.dir/src/thread.cpp.o.requires
 
 .PHONY : base/CMakeFiles/server.dir/requires
 

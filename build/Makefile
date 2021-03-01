@@ -111,19 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MyWebServer
-
-# Build rule for target.
-MyWebServer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 MyWebServer
-.PHONY : MyWebServer
-
-# fast build rule for target.
-MyWebServer/fast:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/build
-.PHONY : MyWebServer/fast
-
-#=============================================================================
 # Target rules for targets named server
 
 # Build rule for target.
@@ -136,141 +123,6 @@ server/fast:
 	$(MAKE) -f base/CMakeFiles/server.dir/build.make base/CMakeFiles/server.dir/build
 .PHONY : server/fast
 
-src/epoll.o: src/epoll.cpp.o
-
-.PHONY : src/epoll.o
-
-# target to build an object file
-src/epoll.cpp.o:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/epoll.cpp.o
-.PHONY : src/epoll.cpp.o
-
-src/epoll.i: src/epoll.cpp.i
-
-.PHONY : src/epoll.i
-
-# target to preprocess a source file
-src/epoll.cpp.i:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/epoll.cpp.i
-.PHONY : src/epoll.cpp.i
-
-src/epoll.s: src/epoll.cpp.s
-
-.PHONY : src/epoll.s
-
-# target to generate assembly for a file
-src/epoll.cpp.s:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/epoll.cpp.s
-.PHONY : src/epoll.cpp.s
-
-src/http_connect.o: src/http_connect.cpp.o
-
-.PHONY : src/http_connect.o
-
-# target to build an object file
-src/http_connect.cpp.o:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/http_connect.cpp.o
-.PHONY : src/http_connect.cpp.o
-
-src/http_connect.i: src/http_connect.cpp.i
-
-.PHONY : src/http_connect.i
-
-# target to preprocess a source file
-src/http_connect.cpp.i:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/http_connect.cpp.i
-.PHONY : src/http_connect.cpp.i
-
-src/http_connect.s: src/http_connect.cpp.s
-
-.PHONY : src/http_connect.s
-
-# target to generate assembly for a file
-src/http_connect.cpp.s:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/http_connect.cpp.s
-.PHONY : src/http_connect.cpp.s
-
-src/main.o: src/main.cpp.o
-
-.PHONY : src/main.o
-
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
-
-src/main.i: src/main.cpp.i
-
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-src/thread_pool.o: src/thread_pool.cpp.o
-
-.PHONY : src/thread_pool.o
-
-# target to build an object file
-src/thread_pool.cpp.o:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/thread_pool.cpp.o
-.PHONY : src/thread_pool.cpp.o
-
-src/thread_pool.i: src/thread_pool.cpp.i
-
-.PHONY : src/thread_pool.i
-
-# target to preprocess a source file
-src/thread_pool.cpp.i:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/thread_pool.cpp.i
-.PHONY : src/thread_pool.cpp.i
-
-src/thread_pool.s: src/thread_pool.cpp.s
-
-.PHONY : src/thread_pool.s
-
-# target to generate assembly for a file
-src/thread_pool.cpp.s:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/thread_pool.cpp.s
-.PHONY : src/thread_pool.cpp.s
-
-src/timer.o: src/timer.cpp.o
-
-.PHONY : src/timer.o
-
-# target to build an object file
-src/timer.cpp.o:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/timer.cpp.o
-.PHONY : src/timer.cpp.o
-
-src/timer.i: src/timer.cpp.i
-
-.PHONY : src/timer.i
-
-# target to preprocess a source file
-src/timer.cpp.i:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/timer.cpp.i
-.PHONY : src/timer.cpp.i
-
-src/timer.s: src/timer.cpp.s
-
-.PHONY : src/timer.s
-
-# target to generate assembly for a file
-src/timer.cpp.s:
-	$(MAKE) -f CMakeFiles/MyWebServer.dir/build.make CMakeFiles/MyWebServer.dir/src/timer.cpp.s
-.PHONY : src/timer.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -279,23 +131,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... MyWebServer"
 	@echo "... server"
-	@echo "... src/epoll.o"
-	@echo "... src/epoll.i"
-	@echo "... src/epoll.s"
-	@echo "... src/http_connect.o"
-	@echo "... src/http_connect.i"
-	@echo "... src/http_connect.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/thread_pool.o"
-	@echo "... src/thread_pool.i"
-	@echo "... src/thread_pool.s"
-	@echo "... src/timer.o"
-	@echo "... src/timer.i"
-	@echo "... src/timer.s"
 .PHONY : help
 
 
