@@ -5,7 +5,7 @@
 #include <assert.h>
 
 #include "thread.h"
-#include "currentthread.h"
+#include "current_thread.h"
 
 namespace CurrentThread
 {
