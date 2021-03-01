@@ -18,3 +18,4 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #add_executable(MyWebServer ${cpp_srcs})
 
 add_subdirectory(base)
+add_subdirectory(net)

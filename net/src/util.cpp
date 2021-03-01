@@ -38,7 +38,7 @@
 
 const static int MAX_BUFF = 4096;
 
-ssize_t readn(int fd, void *buff, size_t n)
+ssize_t Readn(int fd, void *buff, size_t n)
 {
     ssize_t nleft = n;
     ssize_t nread = 0;
@@ -72,7 +72,7 @@ ssize_t readn(int fd, void *buff, size_t n)
     return readSum;
 }
 
-ssize_t readn(int fd, std::string &inBuffer, bool &zero)
+ssize_t Readn(int fd, std::string &inBuffer, bool &zero)
 {
     ssize_t nread = 0;
     ssize_t readSum = 0;
@@ -106,7 +106,7 @@ ssize_t readn(int fd, std::string &inBuffer, bool &zero)
     return readSum;
 }
 
-ssize_t readn(int fd, std::string &inBuffer)
+ssize_t Readn(int fd, std::string &inBuffer)
 {
     ssize_t nread = 0;
     ssize_t readSum = 0;
@@ -139,7 +139,7 @@ ssize_t readn(int fd, std::string &inBuffer)
     return readSum;
 }
 
-ssize_t writen(int fd, void *buff, ssize_t n)
+ssize_t Writen(int fd, void *buff, ssize_t n)
 {
     ssize_t nleft = n;
     ssize_t nwritten = 0;
@@ -173,7 +173,7 @@ ssize_t writen(int fd, void *buff, ssize_t n)
     return writeSum;
 }
 
-ssize_t writen(int fd, std::string &sbuff)
+ssize_t Writen(int fd, std::string &sbuff)
 {
     ssize_t nleft = sbuff.size();
     ssize_t nwritten = 0;
@@ -223,7 +223,7 @@ ssize_t writen(int fd, std::string &sbuff)
 
  */ 
 
-void handleForSigpipe()
+void HandleForSigpipe()
 {
     struct sigaction sa;
     memset(&sa, '\0', sizeof sa);
@@ -260,7 +260,7 @@ int setSocketNonBlocking(int fd)
 
  */
 
-void setSocketNodelay(int fd)
+void SetSocketNodelay(int fd)
 {
     int enable = 1;
     setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (void *)&enable, sizeof enable);
@@ -300,7 +300,7 @@ void setSocketNoLinger(int fd)
 
  */ 
 
-void shutDownWR(int fd)
+void ShutDownWR(int fd)
 {
     shutdown(fd, SHUT_WR);
 }

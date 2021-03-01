@@ -1,7 +1,7 @@
 #include <cstddef>
 #include <cstdio>
 
-#include "../include/file_util.h"
+#include "file_util.h"
 
 AppendFile::AppendFile(std::string filename) : fp_(fopen(filename.c_str(), "ae"))
 {

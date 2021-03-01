@@ -1,4 +1,4 @@
-#include "../include/countdownlatch.h"
+#include "countdownlatch.h"
 
 CountDownLatch::CountDownLatch(int count)
     : mutex_(), condition_(mutex_), count_(count)
