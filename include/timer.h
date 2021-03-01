@@ -2,8 +2,7 @@
 // Created by xgc on 2020/10/8.
 //
 
-#ifndef MYWEBSERVER_TIMER_H
-#define MYWEBSERVER_TIMER_H
+#pragma once
 
 #include <chrono>
 #include <functional>
