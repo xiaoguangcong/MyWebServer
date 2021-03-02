@@ -9,7 +9,7 @@ class Server
 {
 public:
     Server(EventLoop* loop, int thread_num, int port);
-    ~Server();
+    ~Server(){};
     EventLoop* GetLoop() const { return loop_; }
     void Start();
     void HandNewConn();
