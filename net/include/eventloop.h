@@ -5,6 +5,7 @@
 #include <memory>
 #include <sched.h>
 #include <vector>
+#include<unistd.h>
 
 #include "../include/epoll.h"
 #include "../../base/include/mutexlock.h"

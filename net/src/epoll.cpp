@@ -26,12 +26,12 @@ Epoll::Epoll() : epoll_fd_(epoll_create1(EPOLL_CLOEXEC)), events_(EVENTS_SUM)
 Epoll::~Epoll() {}
 
 // 注册新描述符
-void Epoll::Add( ChannelPtr request, int timeout) {
+void Epoll::Add(ChannelPtr request, int timeout) {
   int fd = request->GetFd();
   if (timeout > 0)
   {
     AddTimer(request, timeout);
-    fd2channel_[fd] = request->GetHolder();
+    fd2http_[fd] = request->GetHolder();
   }
   struct epoll_event event;
   event.data.fd = fd;

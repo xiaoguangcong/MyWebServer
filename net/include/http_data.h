@@ -4,7 +4,8 @@
 #include <pthread.h>
 #include <unordered_map>
 #include <map>
-
+#include <unistd.h>
+#include "timer.h"
 
 class EventLoop;
 class TimerNode;
@@ -12,18 +13,18 @@ class Channel;
 
 enum ProcessState
 {
-    STATE_PRASE_URI = 1,
-    STATE_PRASE_HEADERS,
+    STATE_PARSE_URI = 1,
+    STATE_PARSE_HEADERS,
     STATE_RECV_BODY,
     STATE_ANALYSIS,
-    STATE_FINSH
+    STATE_FINISH
 };
 
 enum URIState
 {
-    PRASE_URI_AGAIN = 1,
-    PRASE_URI_ERROR,
-    PRASE_URI_SUCCESS
+    PARSE_URI_AGAIN = 1,
+    PARSE_URI_ERROR,
+    PARSE_URI_SUCCESS
 };
 
 enum HeaderState
@@ -35,8 +36,8 @@ enum HeaderState
 
 enum AnalysisState
 {
-    AYALYSIS_SUCCESS = 1,
-    ASALYSIS_ERROE,
+    ANALYSIS_SUCCESS = 1,
+    ANALYSIS_ERROE,
 };
 
 enum ParseState
@@ -54,7 +55,7 @@ enum ParseState
 
 enum ConnectionState
 {
-    H_CONNNECTED = 0,
+    H_CONNECTED = 0,
     H_DISCONNECTING,
     H_DISCONNECTED
 };
@@ -75,27 +76,37 @@ enum HttpVersion
 class MimeType
 {
 private:
-    static void init();
-    static std::unordered_map<std::string, std::string> mime;
+    static void Init();
+    static std::unordered_map<std::string, std::string> mime_;
     MimeType();
     MimeType(const MimeType&);
 
 private:
-    static pthread_once_t once_control;
+    static pthread_once_t once_control_;
 
 public:
-    static std::string getMime(const std::string &suffix);
+    static std::string GetMime(const std::string &suffix);
 };
 
 class HttpData : public std::enable_shared_from_this<HttpData>
 {
+public:
+    HttpData(EventLoop* loop, int conn_fd);
+    ~HttpData() { close(fd_); }
+    void Reset();
+    void SeperateTimer();
+    void LinkTimer(std::shared_ptr<TimerNode> timer) { timer_ = timer; }
+    std::shared_ptr<Channel> GetChannel() { return channel_; }
+    EventLoop* GetLoop() { return loop_; }
+    void HandleClose();
+    void NewEvent();
 
 private:
     EventLoop *loop_;
     std::shared_ptr<Channel> channel_;
     int fd_;
-    std::string inBuffer_;
-    std::string outBuffer_;
+    std::string inbuffer_;
+    std::string outbuffer_;
     bool error_;
 
     ConnectionState connection_state_;
@@ -105,18 +116,18 @@ private:
     std::string filename_;
     std::string path_;
 
-    int nowReadPos_;
+    int now_read_pos_;
     ProcessState state_;
-    ParseState hState_;
-    bool keep_avail_;
+    ParseState h_state_;
+    bool keep_alive_;
     std::map<std::string, std::string> headers_;
     std::weak_ptr<TimerNode> timer_;
 
-    void handleRead();
-    void handleWrite();
-    void handleConn();
-    void handleError(int fd, int err_num, std::string short_msg);
-    URIState parseURI();
-    HeaderState parseHeaders();
-    AnalysisState analysisRequest();
+    void HandleRead();
+    void HandleWrite();
+    void HandleConn();
+    void HandleError(int fd, int err_num, std::string short_msg);
+    URIState ParseURI();
+    HeaderState ParseHeaders();
+    AnalysisState AnalysisRequest();
 };

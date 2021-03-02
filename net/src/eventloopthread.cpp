@@ -5,7 +5,7 @@
 EventLoopThread::EventLoopThread()
     : loop_(NULL)
     , exiting_(false)
-    , thread_(bind(&EventLoopThread::ThreadFunc(), this), "EventLoopThread")
+    , thread_(std::bind(&EventLoopThread::ThreadFunc, this), "EventLoopThread")
     , mutex_()
     , condition_(mutex_)
 {}

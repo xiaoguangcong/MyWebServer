@@ -3,6 +3,7 @@
 //
 
 #include "../include/timer.h"
+#include "../include/http_data.h"
 #include <ctime>
 #include <memory>
 #include <sys/time.h>
@@ -21,7 +22,7 @@ TimerNode::~TimerNode()
 {
   if (http_data_ptr)
   {
-    http_data_ptr.HandleClose();
+    http_data_ptr->HandleClose();
   }
 }
 
@@ -67,7 +68,7 @@ void TimerManager::AddTimer(std::shared_ptr<HttpData> http_data_ptr, int timeout
 {
   TimerNodePtr new_timer(new TimerNode(http_data_ptr, timeout));
   timer_queue.push(new_timer);
-  http_data_ptr.LinkTimer(new_timer);
+  http_data_ptr->LinkTimer(new_timer);
 }
 
 /* 处理逻辑是这样的~
