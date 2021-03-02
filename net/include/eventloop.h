@@ -28,15 +28,15 @@ public:
     void ShutDown(std::shared_ptr<Channel> channel) { ShutDownWR(channel->GetFd()); }
     void RemoveFromEpoller(std::shared_ptr<Channel> channel)
     {
-        epoller_->del(channel);
+        epoller_->Del(channel);
     }
     void UpdateEpoller(std::shared_ptr<Channel> channel, int timeout = 0)
     {
-        epoller_->mod(channel, timeout);
+        epoller_->Mod(channel, timeout);
     }
     void AddToEpoller(std::shared_ptr<Channel> channel, int timeout = 0)
     {
-        epoller_->add(channel, timeout);
+        epoller_->Add(channel, timeout);
     }
 
 private:
@@ -48,6 +48,7 @@ private:
     mutable MutexLock mutex_;
 
     std::vector<Functor> pending_functors_;
+    bool calling_pending_functors_;
     const pid_t thread_id_;
     std::shared_ptr<Channel> wakeup_channel_ptr_;
 

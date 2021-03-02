@@ -155,4 +155,4 @@ public:
     }
 };
 
-typedef std::shared_ptr<Channel> SP_Channel;
+typedef std::shared_ptr<Channel> ChannelPtr;

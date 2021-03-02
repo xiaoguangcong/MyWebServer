@@ -17,22 +17,22 @@ class Epoll {
 public:
   Epoll();
   ~Epoll();
-  int add(SP_Channel request, int timeout);
-  int mod(SP_Channel request, int timeout);
-  int del(SP_Channel request);
+  void Add(ChannelPtr request, int timeout);
+  void Mod(ChannelPtr request, int timeout);
+  void Del(ChannelPtr request);
   // int wait(int timeouts);
-  std::vector<std::shared_ptr<Channel>> poll();
-  std::vector<std::shared_ptr<Channel>> GetEventRequest(int events_num);
-  void AddTimer(std::shared_ptr<Channel> request_data, int timeout);
+  std::vector<ChannelPtr> Poll();
+  std::vector<ChannelPtr> GetEventRequest(int events_num);
+  void AddTimer(ChannelPtr request_data, int timeout);
   int GetEpollFd() { return epoll_fd_; };
   void HandleExpired();
 
 private:
   int epoll_fd_;
   std::vector<epoll_event> events_;
-  std::shared_ptr<Channel> fd2channel_[MAXEVENTS];
+  ChannelPtr fd2channel_[MAXEVENTS];
   std::shared_ptr<HttpData> fd2http_[MAXEVENTS];
-  TimeManager timer_manager_;
+  TimerManager timer_manager_;
 };
 
 

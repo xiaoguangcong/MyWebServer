@@ -2,9 +2,6 @@
 // Created by xgc on 2020/10/8.
 //
 
-#ifndef MYWEBSERVER_THREAD_POOL_H
-#define MYWEBSERVER_THREAD_POOL_H
-
 #include <condition_variable>
 #include <functional>
 #include <mutex>
@@ -30,4 +27,3 @@ private:
   std::queue<Task> tasks;
 };
 
-#endif // MYWEBSERVER_THREAD_POOL_H
