@@ -1,0 +1,8 @@
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/base/CMakeFiles/edit_cache.dir
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/base/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/base/CMakeFiles/server.dir
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/net/CMakeFiles/edit_cache.dir
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/net/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/xgc/Desktop/project/WebServer/build/net/CMakeFiles/WebServer.dir

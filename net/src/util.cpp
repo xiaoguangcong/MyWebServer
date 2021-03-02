@@ -232,7 +232,7 @@ void HandleForSigpipe()
     if (sigaction(SIGPIPE, &sa, NULL)) return;
 }
 
-int setSocketNonBlocking(int fd)
+int SetSocketNonBlocking(int fd)
 {
     int flag = fcntl(fd, F_GETFL, 0);   // 取得文件描述符filedes的文件状态标志
     if (flag == -1)
@@ -266,7 +266,7 @@ void SetSocketNodelay(int fd)
     setsockopt(fd, IPPROTO_TCP, TCP_NODELAY, (void *)&enable, sizeof enable);
 }
 
-void setSocketNoLinger(int fd)
+void SetSocketNoLinger(int fd)
 {
     struct linger linger_;
     linger_.l_onoff = 1;     // 允许套接口延迟关闭
@@ -305,7 +305,7 @@ void ShutDownWR(int fd)
     shutdown(fd, SHUT_WR);
 }
 
-int socker_bind_listen(int port)
+int socket_bind_listen(int port)
 {
     // 检查port值，取正确区间范围
     if (port < 0 || port > 65535)

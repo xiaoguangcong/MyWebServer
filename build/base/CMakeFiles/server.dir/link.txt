@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libserver.a  CMakeFiles/server.dir/src/aynclogging.cpp.o CMakeFiles/server.dir/src/countdownlatch.cpp.o CMakeFiles/server.dir/src/file_util.cpp.o CMakeFiles/server.dir/src/logfile.cpp.o CMakeFiles/server.dir/src/logging.cpp.o CMakeFiles/server.dir/src/logstream.cpp.o CMakeFiles/server.dir/src/thread.cpp.o
+/usr/bin/ranlib ../../lib/libserver.a
