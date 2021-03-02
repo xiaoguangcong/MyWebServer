@@ -4,12 +4,16 @@
 #include "../../base/include/logging.h"
 #include "../include/eventloop.h"
 #include <pthread.h>
+#include <cstddef>
 #include <memory>
 #include <sys/types.h>
 #include <unordered_map>
 #include <sys/epoll.h>
-#include<stdio.h>
-#include<pthread.h>
+#include <stdio.h>
+#include <pthread.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <fcntl.h>
 
 pthread_once_t MimeType::once_control_ = PTHREAD_ONCE_INIT;
 std::unordered_map<std::string, std::string> MimeType::mime_;
@@ -347,4 +351,324 @@ void HttpData::HandleConn()
     }
 }
 
+URIState HttpData::ParseURI()
+{
+    std::string &str = inbuffer_;
+    std::string cop = str;
+    // 读到完整的请求行再开始解析请求
+    size_t pos = str.find('\r', now_read_pos_);
+    if (pos < 0)
+    {
+        return PARSE_URI_AGAIN;
+    }
+    // 去掉请求行所占的空间，节省空间
+    std::string request_line = str.substr(0, pos);
+    if (str.size() > pos + 1)
+    {
+        str = str.substr(pos + 1);
+    }
+    else {
+        str.clear();
+    }
 
+    // Method
+    int pos_get = request_line.find("GET");
+    int pos_post = request_line.find("POST");
+    int pos_head = request_line.find("HEAD");
+
+    if (pos_get >= 0) {
+        pos = pos_get;
+        method_ = METHOD_GET;
+    }
+    else if (pos_post >= 0)
+    {
+        pos = pos_post;
+        method_ = METHOD_POST;
+    }
+    else if (pos_head >= 0)
+    {
+        pos = pos_head;
+        method_ = METHOD_HEAD;
+    }
+    else
+    {
+        return PARSE_URI_ERROR;
+    }
+
+    // filename
+    pos = request_line.find("/", pos);
+    if (pos < 0)
+    {
+        filename_ = "index.html";
+        version_ = HTTP_11;
+        return PARSE_URI_SUCCESS;
+    }
+    else
+    {
+        size_t pos_ = request_line.find(' ', pos);
+        if (pos_ < 0)
+        {
+            return PARSE_URI_ERROR;
+        }
+        else
+        {
+            if (pos_ - pos > 1)
+            {
+                filename_ = request_line.substr(pos+1, pos_-pos-1);
+                size_t pos__ = filename_.find('?');
+                if (pos__ >= 0)
+                {
+                    filename_ = filename_.substr(0, pos__);
+                }
+            }
+            else {
+                filename_ = "index.html";
+            }
+        }
+        pos = pos_;
+    }
+
+    // HTTP 版本号
+    pos = request_line.find("/", pos);
+    if (pos < 0)
+    {
+        return PARSE_URI_ERROR;
+    }
+    else {
+        if (request_line.size() - pos <= 3)
+        {
+            return PARSE_URI_ERROR;
+        }
+        else {
+            std::string ver = request_line.substr(pos + 1, 3);
+            if (ver == "1.0")
+                version_ = HTTP_10;
+            else if (ver == "1.1")
+                version_ = HTTP_11;
+            else
+                return PARSE_URI_ERROR;
+        }
+    }
+    return PARSE_URI_SUCCESS;
+}
+
+HeaderState HttpData::ParseHeaders() {
+  std::string &str = inbuffer_;
+  int key_start = -1, key_end = -1, value_start = -1, value_end = -1;
+  int now_read_line_begin = 0;
+  bool not_finish = true;
+  size_t i = 0;
+  for (; i < str.size() && not_finish; ++i) {
+    switch (h_state_) {
+      case H_START: {
+        if (str[i] == '\n' || str[i] == '\r') break;
+        h_state_ = H_KEY;
+        key_start = i;
+        now_read_line_begin = i;
+        break;
+      }
+      case H_KEY: {
+        if (str[i] == ':') {
+          key_end = i;
+          if (key_end - key_start <= 0) return PARSE_HEADER_ERROR;
+          h_state_ = H_COLON;
+        } else if (str[i] == '\n' || str[i] == '\r')
+          return PARSE_HEADER_ERROR;
+        break;
+      }
+      case H_COLON: {
+        if (str[i] == ' ') {
+          h_state_ = H_SPACES_AFTER_COLON;
+        } else
+          return PARSE_HEADER_ERROR;
+        break;
+      }
+      case H_SPACES_AFTER_COLON: {
+        h_state_ = H_VALUE;
+        value_start = i;
+        break;
+      }
+      case H_VALUE: {
+        if (str[i] == '\r') {
+          h_state_ = H_CR;
+          value_end = i;
+          if (value_end - value_start <= 0) return PARSE_HEADER_ERROR;
+        } else if (i - value_start > 255)
+          return PARSE_HEADER_ERROR;
+        break;
+      }
+      case H_CR: {
+        if (str[i] == '\n') {
+          h_state_ = H_LF;
+          std::string key(str.begin() + key_start, str.begin() + key_end);
+          std::string value(str.begin() + value_start, str.begin() + value_end);
+          headers_[key] = value;
+          now_read_line_begin = i;
+        } else
+          return PARSE_HEADER_ERROR;
+        break;
+      }
+      case H_LF: {
+        if (str[i] == '\r') {
+          h_state_ = H_END_CR;
+        } else {
+          key_start = i;
+          h_state_ = H_KEY;
+        }
+        break;
+      }
+      case H_END_CR: {
+        if (str[i] == '\n') {
+          h_state_ = H_END_LF;
+        } else
+          return PARSE_HEADER_ERROR;
+        break;
+      }
+      case H_END_LF: {
+        not_finish = false;
+        key_start = i;
+        now_read_line_begin = i;
+        break;
+      }
+    }
+  }
+  if (h_state_ == H_END_LF) {
+    str = str.substr(i);
+    return PARSE_HEADER_SUCCESS;
+  }
+  str = str.substr(now_read_line_begin);
+  return PARSE_HEADER_AGAIN;
+}
+
+AnalysisState HttpData::AnalysisRequest() {
+  if (method_ == METHOD_POST) {
+    // ------------------------------------------------------
+    // My CV stitching handler which requires OpenCV library
+    // ------------------------------------------------------
+    // string header;
+    // header += string("HTTP/1.1 200 OK\r\n");
+    // if(headers_.find("Connection") != headers_.end() &&
+    // headers_["Connection"] == "Keep-Alive")
+    // {
+    //     keepAlive_ = true;
+    //     header += string("Connection: Keep-Alive\r\n") + "Keep-Alive:
+    //     timeout=" + to_string(DEFAULT_KEEP_ALIVE_TIME) + "\r\n";
+    // }
+    // int length = stoi(headers_["Content-length"]);
+    // vector<char> data(inBuffer_.begin(), inBuffer_.begin() + length);
+    // Mat src = imdecode(data, CV_LOAD_IMAGE_ANYDEPTH|CV_LOAD_IMAGE_ANYCOLOR);
+    // //imwrite("receive.bmp", src);
+    // Mat res = stitch(src);
+    // vector<uchar> data_encode;
+    // imencode(".png", res, data_encode);
+    // header += string("Content-length: ") + to_string(data_encode.size()) +
+    // "\r\n\r\n";
+    // outBuffer_ += header + string(data_encode.begin(), data_encode.end());
+    // inBuffer_ = inBuffer_.substr(length);
+    // return ANALYSIS_SUCCESS;
+  } else if (method_ == METHOD_GET || method_ == METHOD_HEAD) {
+    std::string header;
+    header += "HTTP/1.1 200 OK\r\n";
+    if (headers_.find("Connection") != headers_.end() &&
+        (headers_["Connection"] == "Keep-Alive" ||
+         headers_["Connection"] == "keep-alive")) {
+      keep_alive_ = true;
+      header += std::string("Connection: Keep-Alive\r\n") + "Keep-Alive: timeout=" +
+                std::to_string(DEFAULT_KEEP_ALIVE_TIME) + "\r\n";
+    }
+    int dot_pos = filename_.find('.');
+    std::string filetype;
+    if (dot_pos < 0)
+      filetype = MimeType::GetMime("default");
+    else
+      filetype = MimeType::GetMime(filename_.substr(dot_pos));
+
+    // echo test
+    if (filename_ == "hello") {
+      outbuffer_ =
+          "HTTP/1.1 200 OK\r\nContent-type: text/plain\r\n\r\nHello World";
+      return ANALYSIS_SUCCESS;
+    }
+    if (filename_ == "favicon.ico") {
+      header += "Content-Type: image/png\r\n";
+      header += "Content-Length: " + std::to_string(sizeof favicon) + "\r\n";
+      header += "Server: LinYa's Web Server\r\n";
+
+      header += "\r\n";
+      outbuffer_ += header;
+      outbuffer_ += std::string(favicon, favicon + sizeof favicon);
+      ;
+      return ANALYSIS_SUCCESS;
+    }
+
+    struct stat sbuf;
+    if (stat(filename_.c_str(), &sbuf) < 0) {
+      header.clear();
+      HandleError(fd_, 404, "Not Found!");
+      return ANALYSIS_ERROR;
+    }
+    header += "Content-Type: " + filetype + "\r\n";
+    header += "Content-Length: " + std::to_string(sbuf.st_size) + "\r\n";
+    header += "Server: LinYa's Web Server\r\n";
+    // 头部结束
+    header += "\r\n";
+    outbuffer_ += header;
+
+    if (method_ == METHOD_HEAD) return ANALYSIS_SUCCESS;
+
+    int src_fd = open(filename_.c_str(), O_RDONLY, 0);
+    if (src_fd < 0) {
+      outbuffer_.clear();
+      HandleError(fd_, 404, "Not Found!");
+      return ANALYSIS_ERROR;
+    }
+    void *mmapRet = mmap(NULL, sbuf.st_size, PROT_READ, MAP_PRIVATE, src_fd, 0);
+    close(src_fd);
+    if (mmapRet == (void *)-1) {
+      munmap(mmapRet, sbuf.st_size);
+      outbuffer_.clear();
+      HandleError(fd_, 404, "Not Found!");
+      return ANALYSIS_ERROR;
+    }
+    char *src_addr = static_cast<char *>(mmapRet);
+    outbuffer_ += std::string(src_addr, src_addr + sbuf.st_size);
+    ;
+    munmap(mmapRet, sbuf.st_size);
+    return ANALYSIS_SUCCESS;
+  }
+  return ANALYSIS_ERROR;
+}
+
+void HttpData::HandleError(int fd, int err_num, std::string short_msg) {
+  short_msg = " " + short_msg;
+  char send_buff[4096];
+  std::string body_buff, header_buff;
+  body_buff += "<html><title>哎~出错了</title>";
+  body_buff += "<body bgcolor=\"ffffff\">";
+  body_buff += std::to_string(err_num) + short_msg;
+  body_buff += "<hr><em> LinYa's Web Server</em>\n</body></html>";
+
+  header_buff += "HTTP/1.1 " + std::to_string(err_num) + short_msg + "\r\n";
+  header_buff += "Content-Type: text/html\r\n";
+  header_buff += "Connection: Close\r\n";
+  header_buff += "Content-Length: " + std::to_string(body_buff.size()) + "\r\n";
+  header_buff += "Server: LinYa's Web Server\r\n";
+  ;
+  header_buff += "\r\n";
+  // 错误处理不考虑writen不完的情况
+  sprintf(send_buff, "%s", header_buff.c_str());
+  Writen(fd, send_buff, strlen(send_buff));
+  sprintf(send_buff, "%s", body_buff.c_str());
+  Writen(fd, send_buff, strlen(send_buff));
+}
+
+void HttpData::HandleClose() {
+  connection_state_ = H_DISCONNECTED;
+  std::shared_ptr<HttpData> guard(shared_from_this());
+  loop_->RemoveFromEpoller(channel_);
+}
+
+void HttpData::NewEvent() {
+  channel_->SetEvents(DEFAULT_EVENT);
+  loop_->AddToEpoller(channel_, DEFAULT_EXPIRED_TIME);
+}

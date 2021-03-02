@@ -1,5 +1,6 @@
 #include "../include/eventloop.h"
 #include "../../base/include/logging.h"
+#include "../include/util.h"
 #include <cassert>
 #include <cstddef>
 #include <cstdint>

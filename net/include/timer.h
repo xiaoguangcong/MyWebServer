@@ -25,8 +25,8 @@ public:
   bool IsValid();
   void ClearRequest();
   void SetInvalid() {valid_ = false; }
-  bool IsInvalid() const { return !valid_;};
-  size_t GetExpiredTime();
+  bool IsInvalid() const { return !valid_; };
+  size_t GetExpiredTime() const { return expired_time_; };
 
 private:
   bool valid_;

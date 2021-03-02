@@ -3,6 +3,7 @@
 //
 
 #include "../include/epoll.h"
+#include "../include/channel.h"
 #include "../../base/include/logging.h"
 
 #include <cassert>

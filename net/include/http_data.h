@@ -37,7 +37,7 @@ enum HeaderState
 enum AnalysisState
 {
     ANALYSIS_SUCCESS = 1,
-    ANALYSIS_ERROE,
+    ANALYSIS_ERROR,
 };
 
 enum ParseState

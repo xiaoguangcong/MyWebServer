@@ -139,9 +139,9 @@ ssize_t Readn(int fd, std::string &inBuffer)
     return readSum;
 }
 
-ssize_t Writen(int fd, void *buff, ssize_t n)
+ssize_t Writen(int fd, void *buff, size_t n)
 {
-    ssize_t nleft = n;
+    size_t nleft = n;
     ssize_t nwritten = 0;
     ssize_t writeSum = 0;
     char *ptr = (char *)buff;
