@@ -5,9 +5,10 @@
 #include <cstdio>
 #include <getopt.h>
 #include <iostream>
-#include "../include/eventloop.h"
-#include "../../base/include/logging.h"
-#include "../include/server.h"
+
+#include "eventloop.h"
+#include "logging.h"
+#include "server.h"
 
 
 int main(int argc, char *argv[]) 

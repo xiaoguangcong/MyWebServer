@@ -1,6 +1,3 @@
-#include "../include/eventloop.h"
-#include "../../base/include/logging.h"
-#include "../include/util.h"
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
@@ -8,6 +5,10 @@
 #include <sys/eventfd.h>
 #include <sys/types.h>
 #include <vector>
+
+#include "eventloop.h"
+#include "logging.h"
+#include "util.h"
 
 __thread EventLoop* t_loop_in_this_thread = 0;
 

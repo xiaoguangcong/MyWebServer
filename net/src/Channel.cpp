@@ -1,4 +1,4 @@
-#include "../include/channel.h"
+#include "channel.h"
 
 Channel::Channel(EventLoop* loop)
     : loop_(loop)

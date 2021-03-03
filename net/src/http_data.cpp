@@ -1,8 +1,4 @@
-#include "../include/http_data.h"
-#include "../include/channel.h"
-#include "../include/util.h"
-#include "../../base/include/logging.h"
-#include "../include/eventloop.h"
+
 #include <pthread.h>
 #include <cstddef>
 #include <memory>
@@ -14,6 +10,12 @@
 #include <sys/stat.h>
 #include <sys/mman.h>
 #include <fcntl.h>
+
+#include "http_data.h"
+#include "channel.h"
+#include "util.h"
+#include "logging.h"
+#include "eventloop.h"
 
 pthread_once_t MimeType::once_control_ = PTHREAD_ONCE_INIT;
 std::unordered_map<std::string, std::string> MimeType::mime_;

@@ -2,11 +2,12 @@
 // Created by xgc on 2020/10/8.
 //
 
-#include "../include/timer.h"
-#include "../include/http_data.h"
 #include <ctime>
 #include <memory>
 #include <sys/time.h>
+
+#include "timer.h"
+#include "http_data.h"
 
 TimerNode::TimerNode(std::shared_ptr<HttpData> request_data, int timeout)
   : valid_(true), http_data_ptr(request_data)
