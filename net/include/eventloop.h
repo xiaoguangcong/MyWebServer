@@ -13,6 +13,9 @@
 #include "../include/util.h"
 #include "channel.h"
 
+
+// muduo的对于并发处理采用的是one thread one loop方式，所以，每个线程都唯一对应一个EventLoop对象。
+
 class EventLoop
 {
 public:
@@ -43,15 +46,20 @@ public:
 private:
     bool looping_;
     std::shared_ptr<Epoll> epoller_;
-    int wakeup_fd_;
+
+    // EventLoop线程一般被阻塞在Epoll函数中
+    // 这是一个用于唤醒功能的文件描述符和Channel对象
+    int wakeup_fd_;  
+    std::shared_ptr<Channel> wakeup_channel_ptr_;
+
     bool quit_;
     bool event_handling_;
     mutable MutexLock mutex_;
 
+    // 保存外部注入的回调函数对象，在loop函数中被执行
     std::vector<Functor> pending_functors_;
     bool calling_pending_functors_;
-    const pid_t thread_id_;
-    std::shared_ptr<Channel> wakeup_channel_ptr_;
+    const pid_t thread_id_;  // EventLoop所属的线程
 
     void Wakeup();
     void HandleRead();

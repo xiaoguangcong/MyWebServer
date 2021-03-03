@@ -15,7 +15,7 @@
     Channel的作用和成员变量
         1.  Channel fd 封装类，封装套接字、timefd等fd。
         2.  Channel类一般不单独使用，它常常包含在其他类中（Acceptor、Connector、EventLoop、TimerQueue、TcpConnection）使用。Channel对象生存期由这些类控制。
-        3.  Channel类有EventLoop的指针 loop_，通过这个指针可以向EventLoop中添加当前Channel事件。
+        3.  Channel类有EventLoop的指针loop_，通过这个指针可以向EventLoop中添加当前Channel事件。
 */
 
 

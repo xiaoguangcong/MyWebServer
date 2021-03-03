@@ -6,10 +6,12 @@
 #include <sys/socket.h>
 #include <functional>
 
-#include "server.h"
-#include "util.h"
-#include "http_data.h"
-#include "logging.h"
+#include "../include/server.h"
+#include "../include/util.h"
+#include "../include/http_data.h"
+#include "../../base/include/logging.h"
+
+
 
 Server::Server(EventLoop* loop, int thread_num, int port)
     : loop_(loop)
@@ -18,7 +20,7 @@ Server::Server(EventLoop* loop, int thread_num, int port)
     , start_(false)
     , accept_channel_(new Channel(loop_))
     , port_(port)
-    , listen_fd_(socket_bind_listen(port))
+    , listen_fd_(socket_bind_listen(port))   // 完成了socket创建、绑定和监听
 {
     accept_channel_->SetFd(listen_fd_);
     HandleForSigpipe();
@@ -31,8 +33,9 @@ Server::Server(EventLoop* loop, int thread_num, int port)
 
 void Server::Start()
 {
-    eventloopthreadpool_->Start();
-    accept_channel_->SetEvents(EPOLLIN | EPOLLET);
+    eventloopthreadpool_->Start();           // 启动线程池管理器
+    // 将监听socket的可读事件注册到EventLoop中
+    accept_channel_->SetEvents(EPOLLIN | EPOLLET);   // 采用ET触发模式，在接收数据时， 如果有数据只会通知一次
     accept_channel_->SetReadHandler(std::bind(&Server::HandNewConn, this));
     accept_channel_->SetConnHandler(std::bind(&Server::HandThisConn, this));
     loop_->AddToEpoller(accept_channel_, 0);
@@ -45,9 +48,11 @@ void Server::HandNewConn()
     memset(&client_addr, 0, sizeof(struct sockaddr_in));
     socklen_t client_addr_len = sizeof(client_addr);
     int accept_fd = 0;
+
     while((accept_fd = accept(listen_fd_, (struct sockaddr *)&client_addr, 
             &client_addr_len)) > 0)
     {
+        // 从线程池中获取一个EventLoop（因为EventLoop对应一个线程），这里相当于获取了一个线程
         EventLoop* loop = eventloopthreadpool_->GetNextLoop();
         LOG << "New connection from " << inet_ntoa(client_addr.sin_addr) << ":"
         << ntohs(client_addr.sin_port);

@@ -1,7 +1,7 @@
 #include <cassert>
 #include <functional>
 
-#include "eventloopthread.h"
+#include "../include/eventloopthread.h"
 
 EventLoopThread::EventLoopThread()
     : loop_(NULL)

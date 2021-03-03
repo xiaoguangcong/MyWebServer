@@ -16,7 +16,7 @@ public:
     void HandThisConn() { loop_->UpdateEpoller(accept_channel_); }
 
 private:
-    EventLoop* loop_;
+    EventLoop* loop_;           // 主线程的EventLoop对象
     int thread_num_;
     std::unique_ptr<EventLoopThreadPool> eventloopthreadpool_;
     bool start_;
