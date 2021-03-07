@@ -10,10 +10,11 @@
 #include "../../base/include/logging.h"
 #include "../include/util.h"
 
-__thread EventLoop* t_loop_in_this_thread = 0;
+__thread EventLoop* t_loop_in_this_thread = 0;   // 当前线程运行的EventLoop对象
 
 int CreateEventFd()
 {
+    // EFD_CLOEXEC  fork子进程时不继承
     int event_fd = eventfd(0, EFD_NONBLOCK | EFD_CLOEXEC);
     if (event_fd < 0)
     {
@@ -33,7 +34,13 @@ EventLoop::EventLoop()
     , thread_id_(CurrentThread::tid())
     , wakeup_channel_ptr_(new Channel(this, wakeup_fd_))
 {
-    if (!t_loop_in_this_thread)
+
+    // 检查当前线程是否已经创建了其他EventLoop对象
+    if (t_loop_in_this_thread)
+    {
+        //LOG << "Another EventLoop " << t_loop_in_this_thread << " exists in this thread " << thread_id_;
+    }
+    else
     {
         t_loop_in_this_thread = this;
     }

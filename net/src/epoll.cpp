@@ -34,11 +34,12 @@ void Epoll::Add(ChannelPtr request, int timeout) {
   }
   struct epoll_event event;
   event.data.fd = fd;
-  event.events = request->GetEvents();
+  event.events = request->GetEvents();    // 获取事件的类型
   request->EqualAndUpdateLastEvents();
 
   fd2channel_[fd] = request;
-  if (epoll_ctl(fd, EPOLL_CTL_ADD, fd, &event) < 0)
+  // 将文件描述符 fd 添加到epollFd_ 标示的内核事件表中， 并注册 EPOLL 事件
+  if (epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, fd, &event) < 0)
   {
     perror("epoll add error\n");
     fd2channel_->reset();
