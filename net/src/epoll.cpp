@@ -42,7 +42,7 @@ void Epoll::Add(ChannelPtr request, int timeout) {
   if (epoll_ctl(epoll_fd_, EPOLL_CTL_ADD, fd, &event) < 0)
   {
     perror("epoll add error\n");
-    fd2channel_->reset();
+    fd2channel_[fd].reset();
   }
 }
 
@@ -82,6 +82,15 @@ std::vector<ChannelPtr> Epoll::Poll()
 {
   while (true)
   {
+    /*
+      int epoll_wait(int epfd, struct epoll_event * events, int maxevents, int timeout);
+      等待事件的产生，类似于select()调用。
+      参数events用来从内核得到事件的集合，
+      maxevents告知内核这个events有多大，这个 maxevents的值不能大于创建epoll_create()时的size，
+      参数timeout是超时时间（毫秒，0会立即返回，-1将不确定，也有说法说是永久阻塞）。
+      
+      该函数返回需要处理的事件数目，如返回0表示已超时。如果返回–1，则表示出现错误，需要检查 errno错误码判断错误类型。
+     */
     int event_count = 
       epoll_wait(epoll_fd_, &*events_.begin(), events_.size(), EPOLLWAIT_TIME);
     if (event_count < 0)

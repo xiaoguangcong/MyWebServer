@@ -45,6 +45,11 @@ EventLoop::EventLoop()
         t_loop_in_this_thread = this;
     }
 
+    /*
+        EPOLLIN/EPOLLET 事件则只有当对端有数据写入时才会触发，
+        所以触发一次后需要不断读取所有数据直到读完EAGAIN为止。
+        否则剩下的数据只有在下次对端有写入时才能一起取出来了。
+     */
     wakeup_channel_ptr_->SetEvents(EPOLLIN | EPOLLET);
     wakeup_channel_ptr_->SetReadHandler(std::bind(&EventLoop::HandleRead, this));
     wakeup_channel_ptr_->SetConnHandler(std::bind(&EventLoop::HandleConn, this));
@@ -149,10 +154,13 @@ void EventLoop::DoPendingFunctors()
     calling_pending_functors_ = true;
 
     /*
-        这个作用是pendingFunctors_和functors的内容进行交换，实际上就是此时functors持有了pendingFunctors_的内容，而pendingFunctors_被清空了。
+        这个作用是pendingFunctors_和functors的内容进行交换，
+        实际上就是此时functors持有了pendingFunctors_的内容，而pendingFunctors_被清空了。
         优点：
-        如果不这么做，直接遍历pending_functors_,然后处理对应的函数。这样的话，锁会一直等到所有函数处理完才会被释放。在此期间，queueInLoop将不可用。
-        而以上的写法，可以极大减小锁范围，整个锁的持有时间就是swap那一下的时间。待处理函数执行的时候，其他线程还是可以继续调用queueInLoop。
+        如果不这么做，直接遍历pending_functors_,然后处理对应的函数。
+        这样的话，锁会一直等到所有函数处理完才会被释放。在此期间，queueInLoop将不可用。
+        而以上的写法，可以极大减小锁范围，整个锁的持有时间就是swap那一下的时间。
+        待处理函数执行的时候，其他线程还是可以继续调用queueInLoop。
 
      */
     {

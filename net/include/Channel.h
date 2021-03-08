@@ -102,7 +102,7 @@ public:
     void HandleEvents()
     {
         events_ = 0;
-        if ((revents_ & EPOLLHUP) & !(revents_ & EPOLLIN))  // 判断返回的事件 为挂断 close
+        if ((revents_ & EPOLLHUP) && !(revents_ & EPOLLIN))  // 判断返回的事件 为挂断 close
         {
             events_ = 0;
             return;

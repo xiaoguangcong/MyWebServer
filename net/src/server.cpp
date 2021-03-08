@@ -49,6 +49,11 @@ void Server::HandNewConn()
     socklen_t client_addr_len = sizeof(client_addr);
     int accept_fd = 0;
 
+    /*
+        accept()系统调用主要用在基于连接的套接字类型，比如SOCK_STREAM和SOCK_SEQPACKET。
+        它提取出所监听套接字的等待连接队列中第一个连接请求，创建一个新的套接字，并返回指向该套接字的文件描述符。
+        新建立的套接字不在监听状态，原来所监听的套接字也不受该系统调用的影响。
+     */
     while((accept_fd = accept(listen_fd_, (struct sockaddr *)&client_addr, 
             &client_addr_len)) > 0)
     {
