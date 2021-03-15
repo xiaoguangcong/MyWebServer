@@ -24,7 +24,7 @@ EventLoopThread::~EventLoopThread()
 EventLoop* EventLoopThread::StartLoop()
 {
     assert(!thread_.started());
-    thread_.started();
+    thread_.start();
     {
         MutexLockGuard lock(mutex_);
         // 一直等到ThreadFun在Thread里真正跑起来
