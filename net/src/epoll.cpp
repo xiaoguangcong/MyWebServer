@@ -57,7 +57,7 @@ void Epoll::Mod(ChannelPtr request, int timeout) {
     struct epoll_event event;
     event.data.fd = fd;
     event.events = request->GetEvents();
-    if (epoll_ctl(fd, EPOLL_CTL_MOD, fd, &event) < 0) 
+    if (epoll_ctl(epoll_fd_, EPOLL_CTL_MOD, fd, &event) < 0) 
     {
       perror("epoll mod error");
       fd2channel_[fd].reset();
@@ -70,7 +70,7 @@ void Epoll::Del(ChannelPtr request) {
   struct epoll_event event;
   event.data.fd = fd;
   event.events = request->GetLastEvents();
-  if (epoll_ctl(fd, EPOLL_CTL_DEL, fd, &event) < 0) {
+  if (epoll_ctl(epoll_fd_, EPOLL_CTL_DEL, fd, &event) < 0) {
     perror("epoll del error");
   }
   fd2channel_[fd].reset();
